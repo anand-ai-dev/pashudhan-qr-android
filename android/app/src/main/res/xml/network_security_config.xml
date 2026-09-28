@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network security config for local dev testing.
+  Allows cleartext HTTP only to local machine IPs.
+  HTTPS is still enforced for all other domains (Heroku, etc).
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Local machine WiFi IP (same network as dev machine) -->
+        <domain includeSubdomains="false">10.165.233.102</domain>
+        <domain includeSubdomains="false">172.26.64.1</domain>
+        <!-- Android emulator loopback -->
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>
